@@ -12,7 +12,7 @@ Retrieves Rotten Tomatoes ratings for all movies in a directory and its sub-dire
 ## Configuration
 
 The following values can be modified at the top of *movie_ratings.py*.
-1. MOVIE_PATH is the directory of movies you wish to analyze.
-2. TEMPLATE_PATH is the directory of the Jinja2 template (currently the repository root).
-3. RESULTS_PAGE_NAME is the name of the output html file.
-4. EXT is a set containing the file extensions you wish to look at.
+1 MOVIE_PATH is the directory of movies you wish to analyze.
+2 TEMPLATE_PATH is the directory of the Jinja2 template (currently the repository root).
+3 RESULTS_PAGE_NAME is the name of the output html file.
+4 EXT is a set containing the file extensions you wish to look at.
