@@ -81,7 +81,10 @@ for movie in get_movies():
     name = movie.split('.')[:-1]  # Remove file extension
     title, year = get_title_and_year(name)
 
-    search_results = RT().search(title)
+    if title:
+        search_results = RT().search(title)
+    else:
+        continue
     if year:
         for result in search_results:
             if str(result['year']) == year:
