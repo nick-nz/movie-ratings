@@ -1,15 +1,15 @@
-from os import walk
+from os import walk, getcwd
 from operator import itemgetter
 import re
 
 from rottentomatoes import RT
 from jinja2 import Environment, FileSystemLoader
 
-MOVIE_PATH = 'D:\Movies'
-TEMPLATE_PATH = 'C:\Users\Nick\movie_ratings'
+MOVIE_PATH = 'C:\Users\Nick\Videos'
+TEMPLATE_PATH = getcwd()
 RESULTS_PAGE_NAME = 'my_movies'
 
-ext = {'avi', 'mp4', 'mkv'}
+EXT = {'avi', 'mp4', 'mkv'}
 
 results = []
 ids = set()
@@ -20,7 +20,7 @@ def get_movies():
     for (dirpath, dirnames, filenames) in walk(MOVIE_PATH):
         for index, filename in enumerate(filenames):
             extension = filename.split('.')[-1]
-            if extension not in ext:
+            if extension not in EXT:
                 filenames.pop(index)
         movies.extend(filenames)
     print "Found %d movies" % len(movies)
